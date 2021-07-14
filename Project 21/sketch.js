@@ -40,15 +40,19 @@ function setup() {
 function draw() {
   background(51);
 
- wall1.show();
- wall2.show();
- wall3.show();
+ wall1.display();
+ wall2.display();
+ wall3.display();
 Engine.update(engine);
 
 ellipse(ball.position.x, ball.position.y, 40, 40)
 
   drawSprites();
  
+}
+function keyPressed() {
+if (keyCode === UP_ARROW) {
+Matter.Body.applyForce(ball, ball.position, {x:85, y:-85})
 }
 
 
